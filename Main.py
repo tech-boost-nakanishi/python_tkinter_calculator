@@ -28,7 +28,10 @@ GRAY = '#666666'
 frame = tkinter.Tk()
 frame.title("電卓")
 frame.resizable(False, False)
-frame.geometry(str(WIDTH) + 'x' + str(HEIGHT))
+frame.update_idletasks()
+x = (frame.winfo_screenwidth() // 2) - (WIDTH // 2)
+y = (frame.winfo_screenheight() // 2) - (HEIGHT // 2)
+frame.geometry('{}x{}+{}+{}'.format(WIDTH, HEIGHT, x, y))
 
 canvas = tkinter.Canvas(frame, width = WIDTH, height = HEIGHT)
 canvas.pack()
